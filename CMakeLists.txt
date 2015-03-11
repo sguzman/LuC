@@ -1,6 +1,16 @@
 cmake_minimum_required(VERSION 3.1)
 project(lua C)
 
+IF(EXISTS ${/usr/bin/clang})
+  set(CMAKE_C_COMPILER             "/usr/bin/clang")
+  set(CMAKE_AR      "/usr/bin/llvm-ar")
+  #set(CMAKE_LINKER  "/usr/bin/llvm-ld")
+  set(CMAKE_NM      "/usr/bin/llvm-nm")
+  set(CMAKE_OBJDUMP "/usr/bin/llvm-objdump")
+  set(CMAKE_RANLIB  "/usr/bin/llvm-ranlib")
+ENDIF()
+
+
 file(GLOB helloworld_SRC
 "src/lapi.c"
 "src/lcode.c"
