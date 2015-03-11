@@ -50,3 +50,5 @@ file(GLOB helloworld_SRC
 add_executable(lua src/lua.c ${helloworld_SRC})
 target_link_libraries(lua m)
 
+add_executable(luac src/luac.c ${helloworld_SRC})
+target_link_libraries(luac m)
